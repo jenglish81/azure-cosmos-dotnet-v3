@@ -135,6 +135,13 @@ else
 dotnetparameters="$dotnetparameters --ctl_precreated_documents $ctl_precreated_documents"
 fi
 
+if [ -z "ctl_enable_telemetry" ]
+then
+dotnetparameters="$dotnetparameters"
+else
+dotnetparameters="$dotnetparameters --ctl_enable_telemetry $ctl_enable_telemetry"
+fi
+
 log_filename="/tmp/dotnetctl.log"
 
 echo "Log file name is $log_filename"
